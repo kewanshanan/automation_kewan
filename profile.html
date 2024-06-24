@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kewan's Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            background-image: url('back.pic.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-picture {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -75px; /* To overlap header */
+        }
+
+        .profile-section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .profile-section p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .center {
+            display: block;
+            margin: 20px auto;
+        }
+
+        form {
+            text-align: left;
+            width: 100%;
+            max-width: 500px;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        form div {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="date"],
+        form select {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        form input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .profile-section {
+                width: 90%;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .profile-section p {
+                font-size: 1em;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .profile-section {
+                width: 80%;
+                padding: 15px;
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .profile-section p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kewan Shanan</h1>
+    </div>
+    <div class="container">
+        <img class="profile-picture" src="profile.pic.jpg" alt="Profile Picture"/>
+        <video class="center" controls width="500">
+            <source src="3450844567-preview.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="profile-section" id="about_me">
+            <p>Welcome to my profile :)</p>
+            <p>My name is Kewan, 28 years old, from Horfiesh.</p>
+            <p>I am passionate about web development and have been working in this field for several years. I enjoy creating user-friendly and efficient web applications.</p>
+        </div>
+        <div class="profile-section" id="projects">
+            <h2>Projects</h2>
+            <p><strong>Project 1:</strong> A full-stack web application for managing personal tasks, using React and Node.js.</p>
+            <p><strong>Project 2:</strong> A responsive e-commerce website built with HTML, CSS, and JavaScript.</p>
+            <p><strong>Project 3:</strong> A real-time chat application using Socket.io and Express.</p>
+        </div>
+        <div class="profile-section" id="my_name">
+            <p>To contact me:</p>
+            <p>Name: Kewan Shanan</p>
+        </div>
+        <div class="profile-section" id="my_phone_number">
+            <p>Phone number: 054-8824117</p>
+        </div>
+        <div class="profile-section" id="my_mail">
+            <p>Mail: kewan101@gmail.com</p>
+        </div>
+        <form id="registration-form" onsubmit="return validateForm()">
+            <div class="profile-section" id="enter_details">
+                <div>Enter your details:</div><br>
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password (min 8 characters)" minlength="8" required><br>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" minlength="8" required><br>
+
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate" required><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <label>
+                <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                Agree to Terms
+            </label><br>
+
+            <div class="profile-section" id="enter_message">
+                <div>Enter your message:</div><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea><br>
+            </div>
+
+            <button type="submit">Send </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var fullName = document.getElementById('full-name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var birthdate = document.getElementById('birthdate').value;
+            var gender = document.getElementById('gender').value;
+            var agreeTerms = document.getElementById('agree-terms').checked;
+
+            // Validate all fields are filled
+            if (fullName === '' || email === '' || password === '' || confirmPassword === '' || birthdate === '' || gender === '' || !agreeTerms) {
+                alert('Please fill in all fields.');
+                return false;
+            }
+
+            // Validate email format
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Validate password length
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return false;
+            }
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+
+            // Validate birthdate (basic check for a valid date)
+            var dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+            if (!dateRegex.test(birthdate)) {
+                alert('Please enter a valid birthdate.');
+                return false;
+            }
+
+            // Validation passed
+            return true;
+        }
+    </script>
+</body>
+</html>
+#
