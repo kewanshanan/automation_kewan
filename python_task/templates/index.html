@@ -87,13 +87,14 @@
     <div class="container">
         <div class="header">
             <h1>Kewan's Library</h1>
-            <img src="http://localhost:63342/targelamtsa/logo.png" height="500" width="100" alt="Logo" />
+            <img src="http://localhost:63342/targelamtsa/logo.png" alt="Logo" />
         </div>
         <div class="nav-links">
-            <a href="{{ url_for('add_book') }}">Add Book</a>
-            <a href="{{ url_for('search_books') }}">Search</a>
-            <a href="{{ url_for('about_us') }}">About Us</a>
-            <a href="{{ url_for('contact_us') }}">Contact Us</a>
+            <a href="{'/'}"></a>
+            <a href="{'/add'}">Add Book</a>
+            <a href="{'/search'}">Search</a>
+            <a href="{'/about_us'}">About Us</a>
+            <a href="{'/contact_us'}">Contact Us</a>
         </div>
         <ul>
             {% for book in books %}
@@ -102,8 +103,8 @@
                         <strong>{{ book.title }}</strong> by {{ book.author }} ({{ book.publication_year }}), Genre: {{ book.genre }}
                     </div>
                     <div>
-                        <a href="{{ url_for('edit_book', book_index=loop.index0) }}">Edit</a>
-                        <form action="{{ url_for('delete_book', book_index=loop.index0) }}" method="post" style="display:inline;">
+                        <a href="{'/edit/<int:book_index>'}">Edit</a>
+                        <form action="{{/edit/<int:book_index>, /delete/<int:book_index>}}" method="post" style="display:inline;">
                             <button type="submit">Delete</button>
                         </form>
                     </div>

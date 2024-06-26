@@ -13,7 +13,7 @@
             align-items: center;
             height: 100vh;
         }
-        .container {
+        {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -59,7 +59,7 @@
 </head>
 <body>
     <h1>Search Books</h1>
-    <form action="{{ url_for('search_books') }}" method="POST">
+    <form action="{'/search'}" method="POST">
         <label for="query">Search by Author:</label>
         <input type="text" id="query" name="query" required>
         <button type="submit">Search</button>
