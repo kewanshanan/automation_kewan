@@ -1,5 +1,4 @@
 import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -10,13 +9,14 @@ driver = webdriver.Chrome()
 #infra        #logic
 driver.get('https://www.google.com')
 
-#logic
-search_input = driver.find_element(By.XPATH, '//input[@id="Search"]')
-search_input.send_keys('Python programming')
-search_input.send_keys(Keys.RETURN)
-time.sleep(2)
-print(driver.title)
+time.sleep(3)
+search_input = driver.find_element(By.NAME, 'q')
 
 
-#infra
+search_input.send_keys("Python programming")
+search_input.send_keys(Keys.ENTER)
+time.sleep(3)
+first_result = driver.find_element(By.CSS_SELECTOR, "h3")
+print(first_result.text)
+first_result.click()
 driver.quit()
