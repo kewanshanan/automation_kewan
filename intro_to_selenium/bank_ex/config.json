@@ -1,0 +1,15 @@
+{
+    "browser": "chrome",
+    "url": "https://parabank.parasoft.com/parabank/register.htm",
+    "FIRST_NAME_INPUT": "kewan",
+    "LAST_NAME_INPUT": "shanan",
+    "ADDRESS_INPUT": "horfiesh",
+    "CITY_INPUT": "horfiesh",
+    "STATE_INPUT": "north",
+    "ZIP_CODE_INPUT": "2515500",
+    "PHONE_NUMBER_INPUT": "123456789",
+    "SSN_INPUT": "987654321",
+    "USER_NAME_INPUT": "kewan1234",
+    "PASSWORD_INPUT": "kewan321",
+    "PASSWORD_CONFIRM_INPUT": "kewan321"
+}

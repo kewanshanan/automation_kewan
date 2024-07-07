@@ -75,7 +75,6 @@ class TestCombined(unittest.TestCase):
         check_box_2 = self.driver.find_element(*CheckBoxes.CHECK_BOX_2)
         self.assertFalse(check_box_2.is_selected())
 
-        # Double click the first checkbox to uncheck it
         page.double_click_check_box_1()
         self.assertTrue(check_box_1.is_selected())
         print("checkboxes test passed")
