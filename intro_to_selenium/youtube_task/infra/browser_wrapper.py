@@ -5,9 +5,9 @@ from intro_to_selenium.youtube_task.infra.config_provider import ConfigProvider
 
 class BrowserWrapper:
     def __init__(self):
-        self._driver = None
+        # self._driver = None
         self.config = ConfigProvider.load_config_json()
-
+    
     def get_driver(self, url):
         try:
             if self.config["browser"] == "chrome":
